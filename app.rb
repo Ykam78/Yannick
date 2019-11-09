@@ -9,7 +9,7 @@ require 'httparty'
 def upload_image(image)
 	if image && image[:tempfile] && image[:filename]
 		begin
-			token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozNH0.oPkAYlNIDjyayO7DSRO9mYV4sEbSLeUWmj4g0jUx0iI"
+			token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozN30.sm-VtCsw_3BgUp9zxBQbSfGyfmrW17LN5g29W66l8xw"
 			file = image[:tempfile]
 			response = HTTParty.post("http://nameless-forest-80107.herokuapp.com/api/images", body: { image: file },  :headers => { "Authorization" => token} )
 			data = JSON.parse(response.body) 

@@ -43,22 +43,21 @@ class Post
     #fill in the rest
 end
 
+class Comment
+    include DataMapper::Resource
+    property :id, Serial
+    property :user_id, Integer
+    property :post_id, Integer
+    property :text, Text
+    property :created_at, DateTime
+    #fill in the rest
+end
 class Like
     include DataMapper::Resource
     property :id, Serial
     property :user_id, Integer
     property :post_id, Integer
     property :created_at, DateTime
-    #fill in the rest
-end
-
-class Comment
-    include DataMapper::Resource
-    property :id, Serial
-    property :post_id, Integer
-    property :created_at, DateTime
-    property :text, Text
-    property :user_id, Integer
     #fill in the rest
 end
 
@@ -72,4 +71,4 @@ Post.auto_upgrade!
 Like.auto_upgrade!
 Comment.auto_upgrade!
 
-DataMapper::Model.raise_on_save_failure = true  # globally across all models
+DataMapper::Model.raise_on_save_failure = true  # globally across all model
